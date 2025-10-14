@@ -1,0 +1,370 @@
+Goal: Generate Java Selenium TestNG automation code with these specifications:
+
+Instructions:
+-------------
+I need java selenium code for test automation.
+I need a clean code.
+I need only 5 test scripts
+Use testNg model
+Give the commented test about the test case name and scenario.
+Use exception handling 
+Use Tear up tear down
+Use correct and acceptable locator, and locator should not use number format.
+Use only the explicit wait
+Use ID only when it is unique and do not have numbers in it
+Use NAME only ID is not present and when it is unique
+Use XPath (preferably attribute based or text based)
+You have to use the given HTML DOM structure and given example code for references
+project name should be Week2SatTask1
+
+Context:
+----
+You are a AI assistance to write good test automation code using selenium java
+This are expert in understanding the ticket booking online application in india
+
+Example:
+-------
+
+DOM:
+
+<div class="searchWidget___282b3a undefined" data-autoid="searchWidget"><div class="mainContent___b916e4"><div class="inputsWrapper___4655bd"><div class="inputAndSwapWrapper___e7dc96"><div class="srcDestWrapper___e67e69" tabindex="0" role="button"><div class="placeHolderContainer___17236c"><i class="icon___be1a22 icon icon-boarding_point"></i><div class="labelCityWrapper___fd5744"><div class="label___57eda7 ">From</div><div class="srcDest___aa6db3"></div></div></div></div></div><div class="srcDestWrapper___e67e69" tabindex="0" role="button"><div class="placeHolderContainer___17236c"><i class="icon___be1a22 icon icon-dropping_point"></i><div class="labelCityWrapper___fd5744"><div class="label___57eda7 ">To</div><div class="srcDest___aa6db3"></div></div></div></div><div class="dateWrapper___fc9eaf"><div class="dateInputWrapper___c8345a" tabindex="0" role="button" aria-label="Select Date of Journey. Current date: 13 Oct, 2025" aria-expanded="false" aria-haspopup="dialog"><i class="icon___0039d4 icon icon-date_range"></i><div class="dojWrapper___1f3d15"><span class="dateLabel___a92fe6 selected___4b9e19">Date of Journey</span><span class="doj___e69938">13 Oct, 2025</span></div></div><div class="buttonsWrapper___eba03a"><div class="tonalWrap___357792 " style="--button-width:auto"><button class="tonalButton___ba650c " role="button" aria-label="Search for Today">Today</button></div><div class="tonalWrap___357792 " style="--button-width:auto"><button class="tonalButton___ba650c " role="button" aria-label="Search for Tomorrow">Tomorrow</button></div></div></div></div><div class="womenFunnelWrapper___22e69d"><div class="womenFunnelToggleContainer___910415"><div class="imageTextWrapper___f518aa" role="button" tabindex="0" aria-label="Booking for women, Know more"><img src="/rpwassets/public/images/female.svg" alt="" class="imageWrapper___2ff583" width="32" height="32"><div class="textWrapper___4c65e4"><div class="text___65a40a">Booking for women</div><div class="linkText___6aa381">Know more</div></div></div><div role="switch" aria-checked="false" aria-label="Booking for Women" tabindex="0"><label for="switch" class="switchLabel___a8ead2 unChecked___09ee04 enabled___ad293b "><input id="switch" type="checkbox" class="switchInput___50b81b" aria-label="" tabindex="-1"></label></div></div></div></div><button class="primaryButton___3262c2 searchButtonWrapper___90670b " style="--button-width:100%"><i class="icon___f1eb9d icon icon-search"></i>Search buses</button></div>
+
+example Code for reference:
+
+package week2.day1;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class LearnDropdown {
+	
+	public static void main(String[] args) {
+		
+		// Step 0) Setup the chromedriver using webdrivermanager software
+		WebDriverManager.chromedriver().setup(); // .exe or binary
+		
+		// Step 1) Launch the chrome browser (Class Name -> ChromeDriver)
+		ChromeDriver driver = new ChromeDriver();
+		
+		// Step 2) Load the URL (http://leaftaps.com/opentaps/control/main) -> get
+		driver.get("http://leafground.com/pages/Dropdown.html");
+		
+		// Step 3) Maximize the chrome browser
+		driver.manage().window().maximize();
+		
+		// First find the drop down
+		WebElement eleProgram = driver.findElement(By.id("dropdown1"));
+		
+		// Convert the element to Dropdown -> Select
+		Select dd = new Select(eleProgram);
+		
+		// Then select the value (3 ways)
+		// Approach 1: Using Visible (text) -> Working in english language, choose based on test data
+		dd.selectByVisibleText("Selenium");
+		// Approach 2: Using the value (attribute) -> Multi lingual -> Value is the best choice
+		// dd.selectByValue("2");
+		// Approach 3: Using the index (count) -> Choose randomly 
+		// dd.selectByIndex(2);
+
+	}
+
+}
+
+Persona:
+--------
+-Act as a senior test automation expert
+-Act as a expert in selenium java and as a code reviewer
+
+OutPut:
+-------
+-Include comments section
+-provide test case name
+-Include test scenario
+-Include Auther as : Chandra
+-Include date :todays date
+-Include Jira# like Jira:US2150
+-Give test case number like : TS001
+-High level details about the test script and include important details about the structure or method in each test case.
+
+Tone:
+-----
+ - The code should be a formatted properly
+-Should be easy to read and understand the structure
+-Give 3 line space after each test case or script.
+
+
+
+
+
+
+
+
+
+OutPut: selenium java code
+
+package Week2SatTask1;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+import io.github.bonigarcia.wdm.WebDriverManager;
+import java.time.Duration;
+
+/**
+ * Test Automation Suite for Online Bus Ticket Booking Application
+ * Author: Chandra
+ * Date: 13 Oct, 2025
+ * Jira: US2150
+ * Project: Week2SatTask1
+ * 
+ * This test suite covers critical functionality of bus ticket booking system
+ * using Selenium WebDriver with TestNG framework
+ */
+
+public class BusTicketBookingTest {
+    
+    private WebDriver driver;
+    private WebDriverWait wait;
+    private final String BASE_URL = "https://example-bus-booking.com";
+    
+    /**
+     * Setup method to initialize WebDriver and WebDriverWait before each test
+     * Configures Chrome browser and maximizes window
+     */
+    @BeforeMethod
+    public void setUp() {
+        try {
+            WebDriverManager.chromedriver().setup();
+            driver = new ChromeDriver();
+            driver.manage().window().maximize();
+            wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+            driver.get(BASE_URL);
+        } catch (Exception e) {
+            System.err.println("Error during setup: " + e.getMessage());
+            throw e;
+        }
+    }
+    
+    
+    /**
+     * TS001
+     * Test Case Name: Verify Search Widget Loading
+     * Test Scenario: Validate that all main elements of search widget are properly loaded and visible
+     * Jira: US2150
+     */
+    @Test
+    public void testSearchWidgetLoading() {
+        try {
+            // Verify From field is present and clickable
+            WebElement fromField = wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//div[contains(@class,'srcDestWrapper')]//div[text()='From']")));
+            
+            // Verify To field is present and clickable
+            WebElement toField = wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//div[contains(@class,'srcDestWrapper')]//div[text()='To']")));
+            
+            // Verify Date field is present
+            WebElement dateField = wait.until(ExpectedConditions.presenceOfElementLocated(
+                By.xpath("//span[contains(@class,'dateLabel') and text()='Date of Journey']")));
+            
+            // Verify Search button is present and enabled
+            WebElement searchButton = wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//button[contains(@class,'searchButtonWrapper')]")));
+            
+            System.out.println("All search widget elements loaded successfully");
+            
+        } catch (Exception e) {
+            System.err.println("Test TS001 failed: " + e.getMessage());
+            throw e;
+        }
+    }
+    
+    
+    
+    /**
+     * TS002
+     * Test Case Name: Verify From City Selection
+     * Test Scenario: Validate that user can select departure city from the source dropdown
+     * Jira: US2150
+     */
+    @Test
+    public void testFromCitySelection() {
+        try {
+            // Click on From field to open city selection
+            WebElement fromField = wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//div[contains(@class,'srcDestWrapper')]//div[text()='From']")));
+            fromField.click();
+            
+            // Wait for city search input to appear and enter city name
+            WebElement citySearch = wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//input[contains(@placeholder,'Search for city')]")));
+            citySearch.sendKeys("Bangalore");
+            
+            // Select the first suggested city
+            WebElement firstCityOption = wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//div[contains(@class,'cityOption') and contains(text(),'Bangalore')]")));
+            firstCityOption.click();
+            
+            // Verify selected city is displayed in From field
+            WebElement selectedCity = wait.until(ExpectedConditions.presenceOfElementLocated(
+                By.xpath("//div[contains(@class,'srcDest') and contains(text(),'Bangalore')]")));
+            
+            System.out.println("From city selection completed successfully");
+            
+        } catch (Exception e) {
+            System.err.println("Test TS002 failed: " + e.getMessage());
+            throw e;
+        }
+    }
+    
+    
+    
+    /**
+     * TS003
+     * Test Case Name: Verify To City Selection
+     * Test Scenario: Validate that user can select destination city from the destination dropdown
+     * Jira: US2150
+     */
+    @Test
+    public void testToCitySelection() {
+        try {
+            // Click on To field to open city selection
+            WebElement toField = wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//div[contains(@class,'srcDestWrapper')]//div[text()='To']")));
+            toField.click();
+            
+            // Wait for city search input to appear and enter city name
+            WebElement citySearch = wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//input[contains(@placeholder,'Search for city')]")));
+            citySearch.sendKeys("Chennai");
+            
+            // Select the first suggested city
+            WebElement firstCityOption = wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//div[contains(@class,'cityOption') and contains(text(),'Chennai')]")));
+            firstCityOption.click();
+            
+            // Verify selected city is displayed in To field
+            WebElement selectedCity = wait.until(ExpectedConditions.presenceOfElementLocated(
+                By.xpath("//div[contains(@class,'srcDest') and contains(text(),'Chennai')]")));
+            
+            System.out.println("To city selection completed successfully");
+            
+        } catch (Exception e) {
+            System.err.println("Test TS003 failed: " + e.getMessage());
+            throw e;
+        }
+    }
+    
+    
+    
+    /**
+     * TS004
+     * Test Case Name: Verify Date Selection Functionality
+     * Test Scenario: Validate that user can select journey date using Today/Tomorrow buttons
+     * Jira: US2150
+     */
+    @Test
+    public void testDateSelection() {
+        try {
+            // Click on Tomorrow button
+            WebElement tomorrowButton = wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//button[contains(@aria-label,'Search for Tomorrow')]")));
+            tomorrowButton.click();
+            
+            // Verify date is updated in the date field
+            WebElement updatedDate = wait.until(ExpectedConditions.presenceOfElementLocated(
+                By.xpath("//span[contains(@class,'doj') and not(contains(text(),'Date of Journey'))]")));
+            
+            System.out.println("Date selection using Tomorrow button completed successfully");
+            
+        } catch (Exception e) {
+            System.err.println("Test TS004 failed: " + e.getMessage());
+            throw e;
+        }
+    }
+    
+    
+    
+    /**
+     * TS005
+     * Test Case Name: Verify Bus Search Functionality
+     * Test Scenario: Validate that user can search for buses with valid source, destination and date
+     * Jira: US2150
+     */
+    @Test
+    public void testBusSearchFunctionality() {
+        try {
+            // Select From city
+            WebElement fromField = wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//div[contains(@class,'srcDestWrapper')]//div[text()='From']")));
+            fromField.click();
+            
+            WebElement fromCitySearch = wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//input[contains(@placeholder,'Search for city')]")));
+            fromCitySearch.sendKeys("Mumbai");
+            
+            WebElement mumbaiOption = wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//div[contains(@class,'cityOption') and contains(text(),'Mumbai')]")));
+            mumbaiOption.click();
+            
+            // Select To city
+            WebElement toField = wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//div[contains(@class,'srcDestWrapper')]//div[text()='To']")));
+            toField.click();
+            
+            WebElement toCitySearch = wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//input[contains(@placeholder,'Search for city')]")));
+            toCitySearch.sendKeys("Delhi");
+            
+            WebElement delhiOption = wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//div[contains(@class,'cityOption') and contains(text(),'Delhi')]")));
+            delhiOption.click();
+            
+            // Select date using Today button
+            WebElement todayButton = wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//button[contains(@aria-label,'Search for Today')]")));
+            todayButton.click();
+            
+            // Click Search button
+            WebElement searchButton = wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//button[contains(@class,'searchButtonWrapper')]")));
+            searchButton.click();
+            
+            // Verify search results page loads
+            WebElement resultsPage = wait.until(ExpectedConditions.presenceOfElementLocated(
+                By.xpath("//div[contains(@class,'searchResults') or contains(@class,'busListing')]")));
+            
+            System.out.println("Bus search functionality completed successfully");
+            
+        } catch (Exception e) {
+            System.err.println("Test TS005 failed: " + e.getMessage());
+            throw e;
+        }
+    }
+    
+    
+    
+    /**
+     * Teardown method to close browser after each test execution
+     * Ensures proper cleanup of resources
+     */
+    @AfterMethod
+    public void tearDown() {
+        try {
+            if (driver != null) {
+                driver.quit();
+            }
+        } catch (Exception e) {
+            System.err.println("Error during teardown: " + e.getMessage());
+        }
+    }
+}
