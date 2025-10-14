@@ -1,0 +1,189 @@
+Goal: To write prompt to convert selenium to playwright typescript
+
+Instructions:
+I need to convert the java selenium code into a playwrite typescript for test automation.
+I need a clean code only, no additional text.
+I need only the give selenium code to be converted
+Give proper locator as per the given DOM
+Give proper waiting time for the element to appear
+
+Context:
+You are a AI assistance to write good test automation code
+You have to use the given HTML DOM structure and given sample java code for convertion
+This is a online shopping application
+
+Example:
+
+DOM:
+<div id="nav-xshop" class="nav-progressive-content">
+            <script type="text/javascript">window.navmet.tmp=+new Date();</script>
+  <ul class="nav-ul">
+      
+<li class="nav-li">
+<div class="nav-div">
+<a href="/gp/goldbox?ref_=nav_cs_gb" class="nav-a  " tabindex="0" data-csa-c-type="link" data-csa-c-slot-id="nav_cs_0" data-csa-c-content-id="nav_cs_gb" data-csa-c-id="ogrbca-swy09j-u8qldl-rxuibk">Today's Deals</a>
+</div>
+</li>
+
+
+<li class="nav-li">
+<div class="nav-div">
+<a href="/Amazon-Video/b/?ie=UTF8&amp;node=2858778011&amp;ref_=nav_cs_prime_video" class="nav-a  " tabindex="0" data-csa-c-type="link" data-csa-c-slot-id="nav_cs_1" data-csa-c-content-id="nav_cs_prime_video" data-csa-c-id="7s5djr-a5zmtl-u6e89k-8m9xo0">Prime Video</a>
+</div>
+</li>
+
+
+<li class="nav-li">
+<div class="nav-div">
+<a href="/gp/browse.html?node=16115931011&amp;ref_=nav_cs_registry" class="nav-a  " tabindex="0" data-csa-c-type="link" data-csa-c-slot-id="nav_cs_2" data-csa-c-content-id="nav_cs_registry" data-csa-c-id="l27omh-xs34j7-sxz1hn-acc2nd">Registry</a>
+</div>
+</li>
+
+
+<li class="nav-li">
+<div class="nav-div">
+<a href="/gift-cards/b/?ie=UTF8&amp;node=2238192011&amp;ref_=nav_cs_gc" class="nav-a  " tabindex="0" data-csa-c-type="link" data-csa-c-slot-id="nav_cs_3" data-csa-c-content-id="nav_cs_gc" data-csa-c-id="mqgwu3-pve65q-cqhbus-urfscd">Gift Cards</a>
+</div>
+</li>
+
+
+<li class="nav-li">
+<div class="nav-div">
+<a href="/gp/help/customer/display.html?nodeId=508510&amp;ref_=nav_cs_customerservice" class="nav-a  " tabindex="0" data-csa-c-type="link" data-csa-c-slot-id="nav_cs_4" data-csa-c-content-id="nav_cs_customerservice" data-csa-c-id="tph45t-jdykqp-qw5hnh-o4gnvr">Customer Service</a>
+</div>
+</li>
+
+
+<li class="nav-li">
+<div class="nav-div">
+<a href="/b/?_encoding=UTF8&amp;ld=AZUSSOA-sell&amp;node=12766669011&amp;ref_=nav_cs_sell" class="nav-a  " tabindex="0" data-csa-c-type="link" data-csa-c-slot-id="nav_cs_5" data-csa-c-content-id="nav_cs_sell" data-csa-c-id="f77sam-liljkr-cgbovl-yeotl2">Sell</a>
+</div>
+</li>
+
+
+<a href="/gp/help/customer/accessibility" aria-label="Click to call our Disability Customer Support line, or reach us directly at 1-888-283-1678" class="nav-hidden-aria  " tabindex="0" data-csa-c-type="link" data-csa-c-slot-id="nav_cs_6" data-csa-c-id="281pf-gc35hp-gnqoz8-usc3zj">Disability Customer Support</a>
+
+  </ul>
+  <script type="text/javascript">window.navmet.push({key:'CrossShop',end:+new Date(),begin:window.navmet.tmp});</script>
+          </div>
+
+
+Selenium code:
+
+
+package Week2HWgetseleniumJavaCode;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+import java.time.Duration;
+
+public class OnlineShoppingTest {
+    WebDriver driver;
+    WebDriverWait wait;
+    
+    @BeforeMethod
+    public void setUp() {
+        try {
+            System.setProperty("webdriver.chrome.driver", "chromedriver");
+            driver = new ChromeDriver();
+            wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+            driver.manage().window().maximize();
+            driver.get("https://www.amazon.com");
+        } catch (Exception e) {
+            System.out.println("Browser setup failed: " + e.getMessage());
+        }
+    }
+    
+    // Test Case: Verify Today's Deals Navigation
+    // Scenario: User should be able to navigate to Today's Deals page from main navigation
+    @Test
+    public void testTodaysDealsNavigation() {
+        try {
+            WebElement todaysDealsLink = wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//a[contains(text(), \"Today's Deals\")]")));
+            todaysDealsLink.click();
+            
+            wait.until(ExpectedConditions.titleContains("Today's Deals"));
+            
+        } catch (Exception e) {
+            System.out.println("Test execution failed: " + e.getMessage());
+        }
+    }
+    
+    @AfterMethod
+    public void tearDown() {
+        try {
+            if (driver != null) {
+                driver.quit();
+            }
+        } catch (Exception e) {
+            System.out.println("Browser cleanup failed: " + e.getMessage());
+        }
+    }
+}
+
+
+Persona:
+ - Act as a senior test automation developer and expert in writing playwrite typescript code
+
+Output:
+ - Include the comments section, scripter name as :Chandra, date:todays date, also include the key logic or scenario details
+- Follow the code standard as per the tech stack given
+
+
+
+
+
+
+
+
+
+OutPut:
+
+import { test, expect } from '@playwright/test';
+
+/**
+ * Script Name: OnlineShoppingTest
+ * Scripter: Chandra
+ * Date: 2024-12-19
+ * Test Case: Verify Today's Deals Navigation
+ * Scenario: User should be able to navigate to Today's Deals page from main navigation
+ * Key Logic: 
+ * - Launch browser and navigate to Amazon homepage
+ * - Locate and click on Today's Deals link using data attribute locator
+ * - Verify page title confirms navigation to Today's Deals page
+ * - Implement proper setup and teardown with built-in Playwright fixtures
+ */
+
+test.beforeEach(async ({ page }) => {
+    try {
+        await page.goto('https://www.amazon.com');
+        await page.setViewportSize({ width: 1920, height: 1080 });
+    } catch (error) {
+        console.log('Browser setup failed: ' + error.message);
+    }
+});
+
+test('testTodaysDealsNavigation', async ({ page }) => {
+    try {
+        // Locate and click on Today's Deals link using data attribute for better reliability
+        const todaysDealsLink = page.locator('[data-csa-c-content-id="nav_cs_gb"]');
+        await todaysDealsLink.waitFor({ state: 'visible', timeout: 10000 });
+        await todaysDealsLink.click();
+
+        // Wait for navigation and verify page title contains Today's Deals
+        await page.waitForLoadState('networkidle');
+        await expect(page).toHaveTitle(/Today's Deals/, { timeout: 15000 });
+
+    } catch (error) {
+        console.log('Test execution failed: ' + error.message);
+        throw error;
+    }
+});
