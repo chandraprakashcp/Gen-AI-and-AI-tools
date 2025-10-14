@@ -1,0 +1,18 @@
+{
+	"info": {
+		"_postman_id": "ab283ea1-2db9-40a9-a6ad-144eb940397a",
+		"name": "Week 2 HW",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18685490"
+	},
+	"item": [
+		{
+			"name": "NonFunTestCaseForUserStory",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
