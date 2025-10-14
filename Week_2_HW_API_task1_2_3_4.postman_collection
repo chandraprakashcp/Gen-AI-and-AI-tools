@@ -1,0 +1,309 @@
+{
+	"info": {
+		"_postman_id": "ab283ea1-2db9-40a9-a6ad-144eb940397a",
+		"name": "Week 2 HW",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18685490"
+	},
+	"item": [
+		{
+			"name": "NonFunTestCaseForUserStory",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "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",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"messages\": [\r\n        {\r\n            \"role\": \"user\",\r\n            \"content\": \"User Story: US2151 - Enhanced Bus Search Experience.As a frequent traveler ,I want to have an intuitive and responsive bus search interface . So that I can quickly find and book buses with minimal effort.  Task: Based on the give user story, I need some non-functional test cases.\"\r\n        },\r\n        {\r\n            \"role\": \"system\",\r\n            \"content\": \"As an AI Assistant give me a Proper test case as a tester\"\r\n        },\r\n        {\r\n            \"role\": \"assistant\",\r\n            \"content\": \"Need proper formated test cases. Give test case number, give scenarios details or objective of the test case. Give test case number. Also mention what type of test case . example- API, or DB or load etc.\"\r\n        }\r\n    ],\r\n    \"model\": \"llama-3.1-8b-instant\",\r\n    //\"temperature\": 1,\r\n    \"max_completion_tokens\": 1000\r\n    //\"top_p\": 1,\r\n    //\"stream\": true,\r\n    //\"stop\": null\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.groq.com/openai/v1/chat/completions",
+					"protocol": "https",
+					"host": [
+						"api",
+						"groq",
+						"com"
+					],
+					"path": [
+						"openai",
+						"v1",
+						"chat",
+						"completions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Read Captcha",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "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",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"messages\": [\r\n    {\r\n      \"role\": \"user\",\r\n      \"content\": [\r\n        {\r\n      \"type\": \"text\",\r\n      \"text\": \"First Extract the text from the given image display it. Second task is to show the same test in capital letters with one space for each letters.\"\r\n        },\r\n        {\r\n      \"type\": \"image_url\",\r\n      \"image_url\": {\r\n        \"url\":\"data:image/jpg;base64,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\"\r\n                    }\r\n        }\r\n      ]\r\n    }\r\n    \r\n    \r\n  ],\r\n  \"model\": \"meta-llama/llama-4-maverick-17b-128e-instruct\",\r\n  \"temperature\": 1,\r\n  \"max_completion_tokens\": 1000\r\n  //\"top_p\": 1,\r\n  //\"stream\": true,\r\n  //\"stop\": null\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.groq.com/openai/v1/chat/completions",
+					"protocol": "https",
+					"host": [
+						"api",
+						"groq",
+						"com"
+					],
+					"path": [
+						"openai",
+						"v1",
+						"chat",
+						"completions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AudioToText_HW_2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var template = `",
+							"<style type=\"text/css\">",
+							"    .tftable {font-size:14px;color:#333333;width:100%;border-width: 1px;border-color: #87ceeb;border-collapse: collapse;}",
+							"    .tftable th {font-size:18px;background-color:#87ceeb;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;text-align:left;}",
+							"    .tftable tr {background-color:#ffffff;}",
+							"    .tftable td {font-size:14px;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;}",
+							"    .tftable tr:hover {background-color:#e0ffff;}",
+							"</style>",
+							"",
+							"<table class=\"tftable\" border=\"1\">",
+							"    <tr>",
+							"        <th>ID</th>",
+							"        <th>Object</th>",
+							"        <th>Created</th>",
+							"        <th>Model</th>",
+							"        <th>Index</th>",
+							"        <th>Role</th>",
+							"        <th>Content</th>",
+							"        <th>Finish Reason</th>",
+							"        <th>Queue Time</th>",
+							"        <th>Prompt Tokens</th>",
+							"        <th>Prompt Time</th>",
+							"        <th>Completion Tokens</th>",
+							"        <th>Completion Time</th>",
+							"        <th>Total Tokens</th>",
+							"        <th>Total Time</th>",
+							"        <th>System Fingerprint</th>",
+							"        <th>X Groq ID</th>",
+							"    </tr>",
+							"    ",
+							"    <tr>",
+							"        <td>{{id}}</td>",
+							"        <td>{{object}}</td>",
+							"        <td>{{created}}</td>",
+							"        <td>{{model}}</td>",
+							"        <td>{{choices.0.index}}</td>",
+							"        <td>{{choices.0.message.role}}</td>",
+							"        <td>{{choices.0.message.content}}</td>",
+							"        <td>{{choices.0.finish_reason}}</td>",
+							"        <td>{{usage.queue_time}}</td>",
+							"        <td>{{usage.prompt_tokens}}</td>",
+							"        <td>{{usage.prompt_time}}</td>",
+							"        <td>{{usage.completion_tokens}}</td>",
+							"        <td>{{usage.completion_time}}</td>",
+							"        <td>{{usage.total_tokens}}</td>",
+							"        <td>{{usage.total_time}}</td>",
+							"        <td>{{system_fingerprint}}</td>",
+							"        <td>{{x_groq.id}}</td>",
+							"    </tr>",
+							"</table>",
+							"`;",
+							"",
+							"function constructVisualizerPayload() {",
+							"    var res = pm.response.json();",
+							"    return {response: res};",
+							"}",
+							"",
+							"pm.visualizer.set(template, constructVisualizerPayload());"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "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",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "multipart/form-data",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "model",
+							"value": "whisper-large-v3",
+							"type": "text"
+						},
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/praka/OneDrive/Desktop/audio file redbuslogin.wav"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://api.groq.com/openai/v1/audio/translations",
+					"protocol": "https",
+					"host": [
+						"api",
+						"groq",
+						"com"
+					],
+					"path": [
+						"openai",
+						"v1",
+						"audio",
+						"translations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "IntegratePromptToAPI",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "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",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"messages\": [\r\n        {\r\n            \"role\": \"user\",\r\n            \"content\": \"Create a simple java selenium code to verify the login functionality of redbus.in. Give only the code no additiona text.\"\r\n        },\r\n        {\r\n            \"role\": \"system\",\r\n            \"content\": \"As an AI Assistant give me a Proper test script as a senior automation tester\"\r\n        },\r\n        {\r\n            \"role\": \"assistant\",\r\n            \"content\": \"Need proper formated test script. Give test case number, give scenarios details or objective of the test case. Give test case number. Also mention what type of test case . example- API, or DB or load etc.\"\r\n        }\r\n    ],\r\n    \"model\": \"llama-3.1-8b-instant\",\r\n    //\"temperature\": 1,\r\n    \"max_completion_tokens\": 1000\r\n    //\"top_p\": 1,\r\n    //\"stream\": true,\r\n    //\"stop\": null\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.groq.com/openai/v1/chat/completions",
+					"protocol": "https",
+					"host": [
+						"api",
+						"groq",
+						"com"
+					],
+					"path": [
+						"openai",
+						"v1",
+						"chat",
+						"completions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GenerateTestdataForCardApp",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "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",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"messages\": [\r\n        {\r\n            \"role\": \"system\",\r\n            \"content\": \"You are an AI assistant and a senior software tester with experience in testing credit card applications. Act as a senior tester and business analyst in credit card applications.\"\r\n        },\r\n        {\r\n            \"role\": \"user\",\r\n            \"content\": \"Generate 20 sample test data for credit card applications with these requirements:\\n\\n- Card users should be South Indian and Norwegian\\n- Date of birth should be MASKED (format: xx-xx-xxxx)\\n- Include parameters: Name, Age, DOB, City, Country, Card number\\n- Total parameters should not exceed 10\\n- Format the data properly in rows with headings\\n- Include S.No, creation date, test data version, and created by Chandra Prakash\\n\\nExample FORMAT:\\nName: Chandra, Age: 40, DOB: xx-xx-xxx4, Sex: M, Card number: 121212-454545-xxxx\"\r\n        },\r\n        {\r\n            \"role\": \"assistant\",\r\n            \"content\": \"\\n\\nOutPut:Give the results in rows and parameters,-Include s.No,-Include heading,-Include creation date,-Include test data version,-Include test data created by as Chandra Prakash\"\r\n        }\r\n    ],\r\n    \"model\": \"llama-3.1-8b-instant\",\r\n    \"max_completion_tokens\": 21000,\r\n    \"temperature\": 0.7\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.groq.com/openai/v1/chat/completions",
+					"protocol": "https",
+					"host": [
+						"api",
+						"groq",
+						"com"
+					],
+					"path": [
+						"openai",
+						"v1",
+						"chat",
+						"completions"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": "",
+			"type": "default"
+		}
+	]
+}
