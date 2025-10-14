@@ -1,0 +1,83 @@
+Goal: Generate test data for credit card applications for different types of cards and conditions
+
+Instructions:
+-------------
+I need to Generate test data for credit card applications for different types of cards and conditions
+I need 20 sample test data
+Card user should be south Indian and Norwegian.
+Date of birth should be masked
+Include Name, age, DOB,City,Country,card number and so on.
+The parameters should not exceeds 10
+
+Context:
+----
+You are a AI assistance and you are a senior software tester
+You have experience in testing credit card application
+
+Example:
+-------
+Name:Chandra
+Age:40
+DOB:xx-xx-xxx4
+Sex:M
+Card number:121212-454545-xxxx
+
+Persona:
+--------
+-Act as a senior tester
+-Act as a Business analyst in credit card application
+
+OutPut:
+-------
+-Give the results in rows and parameters
+-Include s.No
+-Include heading
+-Include creation date
+-Include test data version
+-Include test data created by as Chandra Prakash
+
+Tone:
+-----
+- The data should be a formatted properly
+-Should be easy to read and understand the structure
+
+
+
+
+OUTPUT:
+-----------------------
+
+
+### **Credit Card Application Test Data**
+
+**Test Data Version:** 1.0  
+**Creation Date:** 24-May-2024  
+**Created By:** Chandra Prakash  
+**Purpose:** Functional & Non-Functional Testing of Credit Card Application Module
+
+---
+
+| S.No | Name | Age | DOB (DD-MM-YYYY) | Sex | City | Country | Card Number (Masked) | Card Type | Credit Limit (USD) |
+|:----:|:-----|:----|:-----------------|:----|:-----|:--------|:---------------------|:----------|:------------------:|
+| 1 | Priya Iyer | 42 | xx-xx-1982 | F | Chennai | India | 4512-xxxx-xxxx-7890 | Platinum | 15,000 |
+| 2 | Lars Johansen | 38 | xx-xx-1986 | M | Oslo | Norway | 5500-xxxx-xxxx-1234 | Gold | 10,000 |
+| 3 | Arjun Reddy | 55 | xx-xx-1969 | M | Bengaluru | India | 3712-xxxx-xxxx-9050 | Signature | 25,000 |
+| 4 | Anjali Nair | 29 | xx-xx-1995 | F | Trivandrum | India | 5105-xxxx-xxxx-6677 | Standard | 5,000 |
+| 5 | Erik Svendsen | 45 | xx-xx-1979 | M | Bergen | Norway | 4539-xxxx-xxxx-4411 | Platinum | 18,000 |
+| 6 | Karthik Menon | 33 | xx-xx-1991 | M | Kochi | India | 4024-xxxx-xxxx-5566 | Gold | 8,500 |
+| 7 | Ingrid Olsen | 61 | xx-xx-1963 | F | Stavanger | Norway | 3421-xxxx-xxxx-9876 | Signature | 30,000 |
+| 8 | Suresh Kumar | 48 | xx-xx-1976 | M | Hyderabad | India | 5500-xxxx-xxxx-7788 | Platinum | 20,000 |
+| 9 | Lena Larsen | 31 | xx-xx-1993 | F | Tromsø | Norway | 4916-xxxx-xxxx-3322 | Standard | 4,500 |
+| 10 | Deepa Pillai | 26 | xx-xx-1998 | F | Coimbatore | India | 3714-xxxx-xxxx-6543 | Gold | 7,000 |
+| 11 | Magnus Pedersen | 52 | xx-xx-1972 | M | Kristiansand | Norway | 4532-xxxx-xxxx-8866 | Signature | 22,000 |
+| 12 | Rajeshwari | 39 | xx-xx-1985 | F | Mysore | India | 5110-xxxx-xxxx-1199 | Platinum | 16,000 |
+| 13 | Sigrid Hansen | 44 | xx-xx-1980 | F | Ålesund | Norway | 4024-xxxx-xxxx-2277 | Gold | 9,000 |
+| 14 | Vijayalakshmi | 57 | xx-xx-1967 | F | Madurai | India | 3423-xxxx-xxxx-7755 | Signature | 28,000 |
+| 15 | Bjørn Nielsen | 35 | xx-xx-1989 | M | Drammen | Norway | 5500-xxxx-xxxx-4433 | Standard | 6,000 |
+| 16 | Mohan Raj | 47 | xx-xx-1977 | M | Visakhapatnam | India | 4929-xxxx-xxxx-9988 | Platinum | 19,000 |
+| 17 | Kari Holm | 41 | xx-xx-1983 | F | Trondheim | Norway | 4530-xxxx-xxxx-6611 | Gold | 11,000 |
+| 18 | Lakshmi | 28 | xx-xx-1996 | F | Vijayawada | India | 5101-xxxx-xxxx-3344 | Standard | 5,500 |
+| 19 | Ola Wang | 50 | xx-xx-1974 | M | Bodø | Norway | 3718-xxxx-xxxx-9922 | Signature | 26,000 |
+| 20 | Gopalakrishnan | 36 | xx-xx-1988 | M | Tiruchirappalli | India | 4024-xxxx-xxxx-8080 | Gold | 8,000 |
+
+
