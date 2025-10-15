@@ -1,0 +1,65 @@
+Task:
+a) Provide a user story from your project or sample userstory--> ask to convert into non-functional testcases
+--------------------------------------
+
+{
+    "messages": [
+        {
+            "role": "user",
+            "content": "User Story: US2151 - Enhanced Bus Search Experience.As a frequent traveler ,I want to have an intuitive and responsive bus search interface . So that I can quickly find and book buses with minimal effort.  Task: Based on the give user story, I need some non-functional test cases."
+        },
+        {
+            "role": "system",
+            "content": "As an AI Assistant give me a Proper test case as a tester"
+        },
+        {
+            "role": "assistant",
+            "content": "Need proper formated test cases. Give test case number, give scenarios details or objective of the test case. Give test case number. Also mention what type of test case . example- API, or DB or load etc."
+        }
+    ],
+    "model": "llama-3.1-8b-instant",
+    //"temperature": 1,
+    "max_completion_tokens": 1000
+    //"top_p": 1,
+    //"stream": true,
+    //"stop": null
+}
+
+
+
+
+Output:-
+-----------
+
+{
+    "id": "chatcmpl-c980ee61-cdc3-48d9-8eef-f5afdfd367b3",
+    "object": "chat.completion",
+    "created": 1760522340,
+    "model": "llama-3.1-8b-instant",
+    "choices": [
+        {
+            "index": 0,
+            "message": {
+                "role": "assistant",
+                "content": " Here are few non-functional test cases based on the User Story : US2151 - Enhanced Bus Search Experience\n\n**1. Test Case No: NFT-001 - Load Testing**\n\n**Description:** Verify that the bus search interface responds properly under load and does not time out or become unresponsive.\n\n**Objective:** The objective is to ensure that the bus search interface can handle a large number of concurrent users and respond promptly to searches without any delay or errors.\n\n**Test Steps:**\n\n- Use a multi-user testing tool such as Apache JMeter to simulate a large number of concurrent users searching for buses.\n- Monitor the response time and ensure it does not exceed 2 seconds.\n- Repeat the test with increasing numbers of users to verify the scalability of the system.\n- Verify that the bus search results are accurate and relevant during the load test.\n\n**Type of Test case:** Load Testing\n\n**2. Test Case No: NFT-002 - Performance Testing**\n\n**Description:** Verify that the bus search interface responds quickly and accurately under various network conditions.\n\n**Objective:** The objective is to ensure that the bus search interface provides a responsive user experience even with varying network speeds and conditions.\n\n**Test Steps:**\n\n- Conduct a performance test using a tool such as Gatling or Locust to simulate different network conditions (e.g., 3G, 4G, Wi-Fi).\n- Verify that the bus search results are accurate and relevant under each network condition.\n- Monitor the response time and ensure it does not exceed 1 second.\n- Repeat the test with varying numbers of concurrent users to verify the scalability of the system.\n\n**Type of Test case:** Performance Testing\n\n**3. Test Case No: NFT-003 - Stress Testing**\n\n**Description:** Verify that the bus search interface can handle a maximum load without failing or crashing.\n\n**Objective:** The objective is to ensure that the bus search interface can handle a high volume of traffic without any errors or failures.\n\n**Test Steps:**\n\n- Conduct a stress test using a tool such as Apache JMeter or Locust to simulate an extremely high load on the system.\n- Monitor the system's resources (e.g., CPU, memory) and ensure they do not exceed 90% utilization.\n- Verify that the bus search results are accurate and relevant during the stress test.\n- Check for any errors or exceptions in the system logs during the stress test.\n\n**Type of Test case:** Stress Testing\n\n**4. Test Case No: NFT-004 - Security Testing (XSS)**\n\n**Description:** Verify that the bus search interface prevents cross-site scripting (XSS) attacks.\n\n**Objective:** The objective is to ensure that the bus search interface protects against XSS attacks that could compromise user security.\n\n**Test Steps:**\n\n- Conduct an XSS test using a tool such as Burp Suite or ZAP to inject malicious scripts into the system.\n- Verify that the system detects and prevents the injected malicious scripts from executing.\n- Monitor the system logs for any suspicious activity or errors during the XSS test.\n- Repeat the test with varying types of malicious scripts to ensure the system is robust against XSS attacks.\n\n**Type of Test case:** Security Testing\n\n**5. Test Case No: NFT-005 - Accessibility Testing**\n\n**Description:** Verify that the bus search interface is accessible and usable by users with disabilities.\n\n**Objective:** The objective is to ensure that the bus search interface meets accessibility standards and provides an inclusive user experience.\n\n**Test Steps:**\n\n- Conduct an accessibility test using a tool such as WAVE or Lighthouse to evaluate the system's accessibility.\n- Verify that the system meets all relevant accessibility standards and guidelines (e.g., WCAG 2.1).\n- Test the system with assistive technologies (e.g., screen readers) to ensure it is usable by users with disabilities.\n- Repeat the test with varying types of assistive technologies to ensure the system is robust and accessible.\n\n**Type of Test case:** Accessibility Testing"
+            },
+            "logprobs": null,
+            "finish_reason": "stop"
+        }
+    ],
+    "usage": {
+        "queue_time": 0.089498867,
+        "prompt_tokens": 152,
+        "prompt_time": 0.008401357,
+        "completion_tokens": 802,
+        "completion_time": 1.204542306,
+        "total_tokens": 954,
+        "total_time": 1.212943663
+    },
+    "usage_breakdown": null,
+    "system_fingerprint": "fp_33e8adf159",
+    "x_groq": {
+        "id": "req_01k7kmy0m9eqksv1hr3v74k1jy"
+    },
+    "service_tier": "on_demand"
+}

@@ -1,0 +1,70 @@
+Task:
+c) Provide captcha (OCR images) as base64 string from different site --> confirm their text
+
+
+{
+  "messages": [
+    {
+      "role": "user",
+      "content": [
+        {
+      "type": "text",
+      "text": "First Extract the text from the given image display it. Second task is to show the same test in capital letters with one space for each letters."
+        },
+        {
+      "type": "image_url",
+      "image_url": {
+        "url":"data:image/jpg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDABYPERMRDhYTEhMZFxYaITckIR4eIUQwMyg3UEZUU09GTUxYY39sWF54X0xNbpZweIOHjpCOVmqcp5uKpn+Ljon/2wBDARcZGSEdIUEkJEGJW01biYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYn/wAARCAA5ASwDASIAAhEBAxEB/8QAGwABAAIDAQEAAAAAAAAAAAAAAAQFAgMGAQf/xAAwEAABBAEDAgUCBgIDAAAAAAABAAIDBBEFEiETMQYUQVFhInEVIzJCgZEWUrHB0f/EABQBAQAAAAAAAAAAAAAAAAAAAAD/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwC4jk1Cw6707EbOjKWMHTzngHn+1o07Ur+oNkkZ0YmxNa4tcD9WRkjPoPlSdPqte66+VkrerO7glzdwwB2UpunVWCVrYyGyja8bzgjGO2fZBCqXpn3XQySiSM1+ruDNvOcce4WnQLTpK1arG4M6cQc4SNwX5/1+PlWTdMqNcHNjcHBnTzvdnb7d0Gm1B0MRkGuMRkPOWj27oIUd+z5+vEXse2XqBwa36Wlo7B3r8qLbuWJoo4bDTHMZY8xPZgZ3jkOHcK1bpVJgjDYSOlnZ9buM9x37LN+nVXtjD2Od0iCzL3ZGPnPwEFVqt29TFmHrNcek17XtZgxgu2lWgoVBXawwsc0YO53cn3z7rYakBndM5m57mbCSSQW+2OyxNCu5rWEPLGnIb1HY/rKCBFfsG/WiMjHtl3hwa36WkDjB9Vg2zqJ0uS714iY3PPT6fDg0n1/hThplSIMcyMgxZLPqPC0aXTjdSxKx+C9xLXEgHn2QR6t2wG37j5XPjjOWxFo/1Bxn+Vle827SJpZbDHtlhOYwzGCR6FWTacDTIQwjq/rGTg/wtX4VV6XSw8s9AZDx9uUEd1i3WswsL4nskiJDCMBpA459l5UvTOuPikkEkYh3k7NuDn0+FMm0+vOWmQOO1u0fUeywGl1WkuAeCW7Cd55CCu0s2YtCga2Fjoy4l+Xc7S4k8Y9lJFqx+FG61zWY+psZbxtHop9atFWgEMYOwejjlYeSi2hh3dMHIZnhBEp2rdyzIWOjjgjc3jbknjkfCtForVIqznuj3ZecnLieVvQEREBEJAGTwFSat4jq0mFkLhNMeAG9ggu8hFWaBFKKXXsSF8sx3Hnt8KzQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERB49oewtcMgjBC4C5QgPiV1V35UTncYX0BUuvaGNRxPA7p2Wdj6FBlPJB4e04uaXyejQ45UXTtR1bUYjYhZCI842k8qBqFq6aQqanVdlvBcBkOHuD7qHRhmoSNk60opydpY/2/cIOup6k2WXy9hvRsD9jvX7KcXtacFwH3K5q7pFy82KeveZKW8seRg/2otupqm6OawwyOh/U1rv1j3QdgCD2OV4SGgk9gqCGerbhIo3H1Z8foeex+xWRZq9vT5Kxe2OdpwX+jx8FBN0vVG6hJOwM29J2O/dbNXdcbTd5EAy/K4rSjqNDVnVYS1szjhwf2K62/p09utufakjlDP0xnDSUGOgw6hHG9+oT7y7s3OcLda1zTqryySw3cDggcqj8HWH+Zs1p3Oc7uMnP3WnxnRig6U8MYbuJ3YQXFvxLThbmEPnOM/QOApOk6zW1RpERLZB3Ye6i6HUh/wAeaAxu6RhLjhUHhB3T1x7CO7XBB2d27XowmWzIGN/5VZH4mpvcC6KZkJOBK5v05UTxuxjqUTuoA9r+GepWlmoUXeFX13OayURkdMjku9EHUtmieGlsjDuGW4PdZr53pOlWr9KeWDeJIiOkd2Ae+QF2ehuunTIxfaRM0kHd3I9CgsUREBERAREQEREBERAREQEREBERAREQEREBERB45rXDDgCPlY9GLpmPpt2Hu3HCzRBWfhslRxfp0vTB5MTuWn/xQLI1e1frgwiFsbsl7TwQuiRBzPQoavZsV7DBDbheW7m8bh7rUfP+H7UTXTmepI7HPcK+s6XVne6TZslPO9vByoR0WaedjrdwyxxnLW4QVHioeW1Ordi4LuSulp3orIZGHfmFgcQoPiLR36pFH0XBr4+wPZadL0m9TjfK6VhsFoazPYBBU0z5LxeWZ+l7iCrTxmYzpjRuG7cMBYHwxJZtm1ctnqOOT0xhWjNFpDaZGGZzRjMhygqvDmpx/hPQ6chfG05w3OVTadFerav5uOlK5u48YxwV3kUMULdsUbWD2aMLNBw3iiQ2tVgbX3OsAAGMDO0rKS5qVdoN/SY5WgcuMf8A2FaatoVk6kNT06RvWBB6bh3K3u1ueCPF7S7AP7ixu5qDboGrU78PSrxiB8Y5i+PcK3XF+HadibXTfirmtVBccEYGCOy7RAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQf/Z"
+                    }
+        }
+      ]
+    }
+    
+    
+  ],
+  "model": "meta-llama/llama-4-maverick-17b-128e-instruct",
+  "temperature": 1,
+  "max_completion_tokens": 1000
+  //"top_p": 1,
+  //"stream": true,
+  //"stop": null
+}
+
+
+
+
+OutPut:
+------
+
+{
+    "id": "chatcmpl-11838eb6-f4aa-4db3-8e12-13a878a913e8",
+    "object": "chat.completion",
+    "created": 1760522652,
+    "model": "meta-llama/llama-4-maverick-17b-128e-instruct",
+    "choices": [
+        {
+            "index": 0,
+            "message": {
+                "role": "assistant",
+                "content": "**Task 1: Extracting Text from the Image**\n\nThe image contains two parts of text. The first part is \"prakashCaptchaFor\" and the second part is \"testing\". \n\n*   The text in the image is: prakashCaptchaFor testing\n\n**Task 2: Displaying the Extracted Text in Capital Letters with Spaces Between Each Letter**\n\nTo display the extracted text in capital letters with one space between each letter, we will first convert the text to uppercase and then insert a space between each character.\n\nThe original text is: prakashCaptchaFor testing\n\nFirst, let's convert it to uppercase: PRAKASHCAPTCHAFOR TESTING\n\nNow, let's add a space between each letter:\n\nP R A K A S H C A P T C H A F O R   T E S T I N G\n\nTherefore, the final output is:\n\nP R A K A S H C A P T C H A F O R   T E S T I N G"
+            },
+            "logprobs": null,
+            "finish_reason": "stop"
+        }
+    ],
+    "usage": {
+        "queue_time": 0.187743435,
+        "prompt_tokens": 188,
+        "prompt_time": 0.004943519,
+        "completion_tokens": 205,
+        "completion_time": 0.619209683,
+        "total_tokens": 393,
+        "total_time": 0.624153202
+    },
+    "usage_breakdown": null,
+    "system_fingerprint": "fp_d12a7680d8",
+    "x_groq": {
+        "id": "req_01k7kn7j33eenrr3egaw11ffww"
+    },
+    "service_tier": "on_demand"
+}

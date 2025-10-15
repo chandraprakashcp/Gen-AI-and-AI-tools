@@ -1,0 +1,66 @@
+Task:
+Integrate the prompt to your API (using postman) and confirm the response (json)
+
+Objective: You can integrate prompt + LLM API
+
+
+
+{
+    "messages": [
+        {
+            "role": "user",
+            "content": "Create a simple java selenium code to verify the login functionality of redbus.in. Give only the code no additiona text."
+        },
+        {
+            "role": "system",
+            "content": "As an AI Assistant give me a Proper test script as a senior automation tester"
+        },
+        {
+            "role": "assistant",
+            "content": "Need proper formated test script. Give test case number, give scenarios details or objective of the test case. Give test case number. Also mention what type of test case . example- API, or DB or load etc."
+        }
+    ],
+    "model": "llama-3.1-8b-instant",
+    //"temperature": 1,
+    "max_completion_tokens": 1000
+    //"top_p": 1,
+    //"stream": true,
+    //"stop": null
+}
+
+
+
+OutPut:
+-------
+{
+    "id": "chatcmpl-941ec6ba-3508-4061-a8ee-783881bcc541",
+    "object": "chat.completion",
+    "created": 1760522742,
+    "model": "llama-3.1-8b-instant",
+    "choices": [
+        {
+            "index": 0,
+            "message": {
+                "role": "assistant",
+                "content": " \n\nHowever, assuming you are asking the basic form of Java selenium code to verify login functionality.\n```java\nimport org.openqa.selenium.By;\nimport org.openqa.selenium.WebDriver;\nimport org.openqa.selenium.WebElement;\nimport org.openqa.selenium.chrome.ChromeDriver;\nimport org.openqa.selenium.support.ui.ExpectedConditions;\nimport org.openqa.selenium.support.ui.WebDriverWait;\n\npublic class RedbusLoginTest {\n    public static void main(String[] args) {\n        WebDriver driver = new ChromeDriver();\n        driver.get(\"https://www.redbus.in/\");\n        WebDriverWait wait = new WebDriverWait(driver, 10);\n        driver.manage().window().maximize();\n\n        WebElement signinButton = driver.findElement(By.linkText(\"Sign In\"));\n        signinButton.click();\n\n        //wait.until(ExpectedConditions.urlToBe(\"https://www.redbus.in/siginin.php\"));\n        driver.get(\"https://www.redbus.in/perl/login/index.php\");\n\n        WebElement emailField = driver.findElement(By.name(\"mobile_number\"));\n        emailField.sendKeys(\"yourEmail\");\n\n        WebElement passwordField = driver.findElement(By.name(\"password\"));\n        passwordField.sendKeys(\"yourPassword\");\n\n        driver.findElement(By.name(\"sign_in\")).click();\n\n        try {\n            Thread.sleep(10000);\n            if (driver.getTitle().contains(\"Dashboard\")) {\n                System.out.println(\"Login Successful\");\n            } else {\n                System.out.println(\"Login Failed\");\n            }\n        } catch (Exception e) {\n            e.printStackTrace();\n        }\n    }\n}\n```"
+            },
+            "logprobs": null,
+            "finish_reason": "stop"
+        }
+    ],
+    "usage": {
+        "queue_time": 0.09324705,
+        "prompt_tokens": 120,
+        "prompt_time": 0.007577268,
+        "completion_tokens": 291,
+        "completion_time": 0.433774769,
+        "total_tokens": 411,
+        "total_time": 0.441352037
+    },
+    "usage_breakdown": null,
+    "system_fingerprint": "fp_7b3cfae3af",
+    "x_groq": {
+        "id": "req_01k7knaag8emha09jyg0w9fh6b"
+    },
+    "service_tier": "on_demand"
+}
