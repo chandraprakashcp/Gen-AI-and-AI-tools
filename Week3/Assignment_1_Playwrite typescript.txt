@@ -1,0 +1,46 @@
+import { Page, Locator } from '@playwright/test';
+
+export class DatePickerComponent {
+  readonly wrapper: Locator;
+  readonly dateInput: Locator;
+  readonly dateIcon: Locator;
+  readonly dateLabel: Locator;
+  readonly dateValue: Locator;
+  readonly todayButton: Locator;
+  readonly tomorrowButton: Locator;
+
+  constructor(private readonly page: Page) {
+    this.wrapper = page.locator('div.dateWrapper___5e7fce');
+    this.dateInput = this.wrapper.locator('div.dateInputWrapper___50eff3');
+    this.dateIcon = this.dateInput.locator('i.icon___22c3b8');
+    this.dateLabel = this.wrapper.locator('span.dateLabel___ec3462');
+    this.dateValue = this.wrapper.locator('span.doj___9f3738');
+    this.todayButton = this.wrapper.locator('button[aria-label="Search for Today"]');
+    this.tomorrowButton = this.wrapper.locator('button[aria-label="Search for Tomorrow"]');
+  }
+
+  async openDatePicker(): Promise<void> {
+    await this.dateInput.click();
+  }
+
+  async getSelectedDate(): Promise<string> {
+    return await this.dateValue.textContent() ?? '';
+  }
+
+  async getDateLabel(): Promise<string> {
+    return await this.dateLabel.textContent() ?? '';
+  }
+
+  async selectToday(): Promise<void> {
+    await this.todayButton.click();
+  }
+
+  async selectTomorrow(): Promise<void> {
+    await this.tomorrowButton.click();
+  }
+
+  async isExpanded(): Promise<boolean> {
+    const expanded = await this.dateInput.getAttribute('aria-expanded');
+    return expanded === 'true';
+  }
+}
